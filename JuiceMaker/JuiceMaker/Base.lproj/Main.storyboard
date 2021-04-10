@@ -48,7 +48,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="strawberryBananaOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIR-uv-fh9"/>
+                                            <action selector="orderStrawberryBanana:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIR-uv-fh9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9E-UT-w7W">
@@ -62,7 +62,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="strawberryOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYB-vI-o24"/>
+                                            <action selector="orderStrawberry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYB-vI-o24"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvU-vF-N51">
@@ -72,7 +72,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="mangoKiwiOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jCa-9y-OmT"/>
+                                            <action selector="orderMangoKiwi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jCa-9y-OmT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSd-4e-oEc">
@@ -82,7 +82,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="mangoOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ugt-P2-hTM"/>
+                                            <action selector="orderMango:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ugt-P2-hTM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-Yr-Eo4">
@@ -92,7 +92,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="kiwiOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSt-KS-LeK"/>
+                                            <action selector="orderKiwi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSt-KS-LeK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q8-es-wLv">
@@ -102,7 +102,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="pineappleOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkw-w9-Dhv"/>
+                                            <action selector="orderPineapple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkw-w9-Dhv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-xa-DLl">
@@ -112,7 +112,7 @@
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="bananaOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ia-7n-O3i"/>
+                                            <action selector="orderBanana:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ia-7n-O3i"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -310,6 +310,9 @@
                                             <constraint firstAttribute="height" constant="32" id="9xt-ZI-AgK"/>
                                             <constraint firstAttribute="width" constant="88" id="VLg-7i-9qV"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="strawberryStockChanged:" destination="0qT-ii-sP6" eventType="valueChanged" id="3wO-iv-6fD"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-fo-kap">
                                         <rect key="frame" x="176" y="182" width="88" height="32"/>
@@ -317,6 +320,9 @@
                                             <constraint firstAttribute="height" constant="32" id="Kf6-vv-3vh"/>
                                             <constraint firstAttribute="width" constant="88" id="RdV-Hc-72x"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="bananaStockChanged:" destination="0qT-ii-sP6" eventType="valueChanged" id="1io-6a-WLp"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Fni-yt-T25">
                                         <rect key="frame" x="350" y="182" width="88" height="32"/>
@@ -324,6 +330,9 @@
                                             <constraint firstAttribute="width" constant="88" id="VWd-gr-fy7"/>
                                             <constraint firstAttribute="height" constant="32" id="Vsl-wK-waB"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="pineappleStockChanged:" destination="0qT-ii-sP6" eventType="valueChanged" id="CyE-1c-s5n"/>
+                                        </connections>
                                     </stepper>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mango.png" translatesAutoresizingMaskIntoConstraints="NO" id="0G2-Ee-GTe">
                                         <rect key="frame" x="678" y="20" width="88" height="86"/>
@@ -392,6 +401,9 @@
                                             <constraint firstAttribute="width" constant="88" id="bhe-fE-8ER"/>
                                             <constraint firstAttribute="height" constant="32" id="q7l-ab-tHZ"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="kiwiStockChanged:" destination="0qT-ii-sP6" eventType="valueChanged" id="bJm-0i-Dfi"/>
+                                        </connections>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jlT-bI-UtS">
                                         <rect key="frame" x="675" y="182" width="88" height="32"/>
@@ -399,6 +411,9 @@
                                             <constraint firstAttribute="width" constant="88" id="NWv-pN-MsN"/>
                                             <constraint firstAttribute="height" constant="32" id="SdR-Nt-sTF"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="mangoStockChanged:" destination="0qT-ii-sP6" eventType="valueChanged" id="gpV-I5-mlK"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -486,11 +501,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bananaStepper" destination="aAc-fo-kap" id="WD1-8T-dkn"/>
+                        <outlet property="kiwiStepper" destination="UpK-PN-RZh" id="4UE-Al-tRr"/>
+                        <outlet property="mangoStepper" destination="jlT-bI-UtS" id="LDt-4X-8Z4"/>
                         <outlet property="numberOfBanana" destination="awu-Sq-A2R" id="f92-UO-MiM"/>
                         <outlet property="numberOfKiwi" destination="na9-ND-nEa" id="Oj2-h2-bcu"/>
                         <outlet property="numberOfMango" destination="TPr-zs-w0b" id="XLX-cy-GZc"/>
                         <outlet property="numberOfPineapple" destination="TqY-4l-1wH" id="sdE-4p-aTe"/>
                         <outlet property="numberOfStrawberry" destination="Apz-b6-nSG" id="Bey-TP-kJM"/>
+                        <outlet property="pineappleStepper" destination="Fni-yt-T25" id="tlF-7g-zQS"/>
+                        <outlet property="strawberryStepper" destination="uOT-Zp-ebm" id="wTo-0U-D3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOa-wD-MY6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
