@@ -24,9 +24,32 @@
   class JuiceMaker {
     var strawberryStock: Int = 10
   ```
+- 해결방안
   - 해당 접근제한자를 fileprivate로 설정해주었다. private보다 fileprivate으로 주어 다른 VC에서도 쥬스를 차감하면 쥬스 재고가 가감될 수 있도록 변경하였다.
 
 - 문제점 (2)
+  - 재고 수정 시 재고 관리 화면으로 넘어가게되는데 쥬스 주문의 과일 재고와 일치하지 않는 과일 재고 수량이 나오는 문제가 발생하였다.
+- 원인
+  - 재고 수정을 누를 시 화면이 넘어가도록 modal 방식으로 구성하여주었다. 그런데 서로의 VC에서 재고 데이터값을 전달받는 부분의 구현이 되지 않아 재고관리 VC의 재고는 초기값인 10으로 전부 세팅되게 되었다. 물론 다시 쥬스주문 화면으로 넘어온다면 10이 아닌 감소된 수량이 나타나게 된다. 즉 서로의 데이터값이 연동되지 않고 따로 값을 갖고있는셈이었다.
+- 해결방안
+  - 우선 서로의 VC를 세그 방식으로 연결해주었다. 그리고 재고수정을 클릭하거나 재고 부족시에도 넘어가야됨으로 재고관리 VC의 identifierID를 설정해주고 prepare 함수를 오버라이드하여 재고가 연동될 수 있도록 구현하였다.
+  ```swift
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let manageStockView: ManageStockViewController = segue.destination as? ManageStockViewController else { return }
+
+        manageStockView.strawberryStock = juiceMaker.strawberryStock
+        manageStockView.bananaStock = juiceMaker.bananaStock
+        manageStockView.pineappleStock = juiceMaker.pineappleStock
+        manageStockView.kiwiStock = juiceMaker.kiwiStock
+        manageStockView.mangoStock = juiceMaker.mangoStock
+    }
+    ```   
+    이렇게 세그동작이 일어날때 현재 VC의 재고를 재고관리 VC의 재고로 입혀준다. 그리고 해당 재고관리 이동이 필요한곳에서 핸들러를 통해 세그 이동을 실행시켜준다.
+    ```swift
+    let okAction = UIAlertAction(title: "예", style: .default, handler: { (action) in
+            self.performSegue(withIdentifier: "manageStockSegue", sender: self) })
+    ```   
 
 
 
@@ -76,5 +99,9 @@
   case .strawberryJuice:
     strawberryStock -= amountOfNeed.strawberryForStrawberryJuice
   ```   
-- 고민점
+- 고민점 (3)
+  - "쥬스 레시피에 대한 타입을 클래스가 아닌 구조체로 해준 이유는 무엇인가요?"
+- 원인 및 대책
+  - 해당 과일 재고에 대한 타입은 현재 하나의 점포만 있다면 class로 해주는것도 괜찮다. 그렇지만 만약 해당 레시피를 여러 쥬스 점포에서 인스턴스를 만들어 사용한다고 생각하면 class로 만들경우 각 과일 재고 값에 대해 참조하게되고 어느 가게에서든 수정이 일어나면 동일하게 반영이 된다. 이에 참조를 하지 않는 값타입의 Struct 타입으로 만들어 추후 해당 타입 모델을 여러곳에서 쓸 수 있는것이 효율적이다.
+- 고민점 (4)
  
